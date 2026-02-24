@@ -39,18 +39,18 @@ A comprehensive iOS shortcut that automatically notifies you at Suhoor and Iftar
 - Open the imported shortcut and scroll down to the **setup section**
 - Set the value for **`setupState`** to **`True`**
 
-   ![Setup State Configuration](images/setup-state.png)
+![Setup State Configuration](images/setup-state.png)
 
 - Navigate to **Settings > Apps > Shortcuts > Advanced** and enable:
    - **Allow Running Scripts**
    - **Allow Deleting Without Confirmation**
   
-   ![Shortcuts Configuration](images/shortcuts-config.png)
+![Shortcuts Configuration](images/shortcuts-config.png)
 
 - Run the shortcut for the first time
 - When the pop-up appears, tap **"Delete Always"** to grant the necessary permissions
 
-   ![Delete Permission Dialog](images/delete-permission.png)
+![Delete Permission Dialog](images/delete-permission.png)
 
 - Set **`setupState`** back to **`False`**
    - *Optional:* Run the shortcut again to verify the pop-up no longer appears
@@ -60,7 +60,7 @@ A comprehensive iOS shortcut that automatically notifies you at Suhoor and Iftar
 - Scroll through the shortcut and locate the **list of Islamic fasts**
 - Remove any fasts you do not observe (you can add them back anytime)
 
-   ![Fasting List](images/fasting-list.png)
+![Fasting List](images/fasting-list.png)
 
 ### Step 4: Set Up Automations
 
@@ -78,7 +78,7 @@ A comprehensive iOS shortcut that automatically notifies you at Suhoor and Iftar
     - Toggle **off** "Notify When Run"
     - Set the action to run the **Fasting Reminder** shortcut
 
-   ![Automation Configuration](images/automation-config.png)
+![Automation Configuration](images/automation-config.png)
 
 ## Usage
 
