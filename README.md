@@ -32,7 +32,7 @@ A comprehensive iOS shortcut that automatically notifies you at Suhoor and Iftar
 ### Step 1: Install Required Apps
 
 - Download **[Scriptable](https://apps.apple.com/us/app/scriptable/id1405459188)** from the iOS App Store
-- Import the **[Fasting Reminder Shortcut](https://www.icloud.com/shortcuts/15debea001f9454eb3f54253053c1eee)**
+- Download the **[Fasting Reminder Shortcut](https://github.com/iamrayyaann/fasting-ios-shortcut/blob/main/Fasting%20Reminder.shortcut)**
 
 ### Step 2: Initial Configuration
 
