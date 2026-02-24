@@ -1,0 +1,121 @@
+# Fasting Reminder
+
+> A comprehensive iOS shortcut that automatically notifies you at Suhoor and Iftar times based on your location and manages alarms accordingly — so you never miss a fast.
+
+## Features
+
+- **Automatic Prayer Time Fetching** — Retrieves accurate Suhoor (Fajr) and Iftar (Maghrib) times using the [Al-Adhan API](https://aladhan.com) based on your location
+- **Smart Alarm Management** — Automatically creates and deletes alarms for fasting times without manual intervention
+- **Location-Based Accuracy** — Prayer times are calculated based on your current geographic location
+- **Automation Support** — Runs silently in the background via iOS Shortcuts automations
+- **Customizable Fast List** — Enable or disable specific fasts based on your observance
+
+### Supported Fasts
+
+| Fast | Type |
+|------|------|
+| Ramadan (Full Month) | Obligatory |
+| Ashura (10th Muharram) | Voluntary |
+| Day of Arafah (9th Dhul Hijjah) | Voluntary |
+| Ayyam al-Beed (13th, 14th, 15th of each Hijri month) | Voluntary |
+| Mondays & Thursdays | Voluntary |
+| Six Days of Shawwal | Voluntary (Manual Mode) |
+
+## Prerequisites
+
+- **iOS 15 or later** (with Shortcuts app)
+- **Internet connection** — Required for fetching prayer times from the Al-Adhan API
+- **[Scriptable](https://apps.apple.com/us/app/scriptable/id1405459188)** — A free app by Simon B. Støvring that enables advanced scripting capabilities for the shortcut
+
+## Installation & Setup
+
+### Step 1: Install Required Apps
+
+1. Download **[Scriptable](https://apps.apple.com/us/app/scriptable/id1405459188)** from the iOS App Store
+2. Import the **[Fasting Reminder Shortcut](https://www.icloud.com/shortcuts/3e79d49d497c449cb568866628bb948c)**
+
+### Step 2: Initial Configuration
+
+3. Open the imported shortcut and scroll down to the **setup section**
+4. Set the value for **`setupState`** to **`True`**
+
+   ![Setup State Configuration](images/setup-state.png)
+
+5. Navigate to **Settings > Apps > Shortcuts > Advanced** and enable:
+   - **Allow Running Scripts**
+   - **Allow Deleting Without Confirmation**
+
+6. Run the shortcut for the first time
+7. When the pop-up appears, tap **"Delete Always"** to grant the necessary permissions
+
+   ![Delete Permission Dialog](images/delete-permission.png)
+
+8. Set **`setupState`** back to **`False`**
+   - *Optional:* Run the shortcut again to verify the pop-up no longer appears
+
+### Step 3: Customize Your Fasts
+
+9. Scroll through the shortcut and locate the **list of Islamic fasts**
+10. Remove or disable any fasts you do not observe
+
+### Step 4: Set Up Automations
+
+11. Open the **Shortcuts** app and go to the **Automation** tab
+12. Create **three separate daily time-based automations**:
+
+| Automation | Time Range | Purpose |
+|------------|------------|---------|
+| 1 | **2:00 AM – 4:00 AM** | Sets the Suhoor alarm |
+| 2 | **4:00 PM – 6:00 PM** | Sets the Iftar alarm |
+| 3 | **8:00 PM – 9:00 PM** | Deletes used alarms |
+
+13. For each automation:
+    - Set it to **Run Immediately**
+    - Toggle **off** "Notify When Run"
+    - Set the action to run the **Fasting Reminder** shortcut
+
+    ![Automation Configuration](images/automation-config.png)
+
+## Usage
+
+Once configured, the shortcut runs automatically in the background. No daily interaction is required — alarms are created and deleted based on your fasting schedule.
+
+### Manual Mode (Fast Everyday)
+
+For voluntary fasts like the **Six Days of Shawwal** or other consecutive fasting periods:
+
+1. Open the shortcut and set **`Fast Everyday`** to **`True`**
+2. The shortcut will treat every day as a fasting day
+3. **Remember** to set it back to **`False`** when you're done
+
+## Known Issues & Limitations
+
+| Issue | Description |
+|-------|-------------|
+| **Shawwal Fasts** | The Six Days of Shawwal are not automatically tracked since they can be observed on any six days during the month. Use **Fast Everyday** mode as a workaround. |
+| **Scriptable Dependency** | The shortcut requires the Scriptable app to function. This is necessary for advanced alarm management that native Shortcuts cannot perform. |
+| **Internet Required** | Prayer times are fetched online; the shortcut will not work offline. |
+| **Location Permissions** | The shortcut requires location access to fetch accurate prayer times for your area. |
+| **iOS Automation Limits** | Time-based automations may occasionally be delayed by iOS system processes. |
+
+## Troubleshooting
+
+- **Alarms not being set?** Ensure all three automations are configured and the shortcut has permission to run scripts.
+- **Wrong prayer times?** Verify your location services are enabled and the shortcut has location access.
+- **Pop-up keeps appearing?** Make sure you selected "Delete Always" during initial setup and that `setupState` is set to `False`.
+
+For detailed configuration options, see the **[Configuration Guide](CONFIG.md)**.
+
+## Contributing
+
+Found a bug or have a feature request? Feel free to open an issue or submit a pull request.
+
+## License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+---
+
+<p align="center">
+  <i>May your fasts be accepted.</i>
+</p>
